@@ -1,0 +1,94 @@
+@import 'color';
+
+.about {
+    #content {
+        .feature {
+            padding: 100px 0;
+            background-image: url(http://lorempixel.com/1920/1080);
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: $white-color;
+            text-align: center;
+            h3 {
+                font-size: 18px;
+                font-weight: normal;
+                text-transform: uppercase;
+            }
+            i {
+                display: block;
+                margin-bottom: 30px;
+                color: $active-color;
+                font-size: 36px;
+            }
+            p {
+                color: $white-color;
+            }
+        }
+    }
+    .cover {
+        h4 {
+            margin: 30px 0;
+            color: $info-color;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        .social-media {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            ul {
+                display: inline-block;
+            }
+            li {
+                float: left;
+                margin: 0 10px;
+            }
+            a {
+                color: $normal-color;
+                text-decoration: none;
+            }
+        }
+    }
+    .info {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        .name {
+            color: $normal-color;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        p {
+            padding: 0;
+            color: $light-gray-color;
+            font-size: 12px;
+        }
+    }
+    .gray {
+        padding: 100px 0;
+        background-color: $footer-background-color;
+        text-align: center;
+        i {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 36px;
+        }
+        .number {
+            font-size: 36px;
+        }
+        h4 {
+            margin: 0;
+            color: $gray-color;
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
