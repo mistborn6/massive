@@ -1,5 +1,6 @@
 @import 'color';
 @import 'about';
+@import 'service';
 
 * {
     box-sizing: border-box;
@@ -46,9 +47,16 @@ img {
 
 .row {
     margin: 0 -30px;
+    &.bordered {
+        > div {
+            border: 1px solid $border-color;
+            margin-left: -1px;
+            margin-bottom: -1px;
+        }
+    }
 }
 
-.col-2, .col-3, .col-4, .col-6, .col-12 {
+.col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-12 {
     float: left;
     padding: 0 30px;
 }
@@ -61,12 +69,20 @@ img {
     width: 25%;
 }
 
+.col-4 {
+    width: 33.333%;
+}
+
+.col-5 {
+    width: 41.66666%;
+}
+
 .col-6 {
     width: 50%;
 }
 
-.col-4 {
-    width: 33.333%;
+.col-7 {
+    width: 58.3333%;
 }
 
 .col-12 {
@@ -78,16 +94,27 @@ img {
     display: inline-block;
     padding: 15px 30px;
     background-color: $white-color;
-    color: $info-color;
+    color: #222;
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    &.black {
+        background-color: #222;
+        color: $white-color;
+        transition: all 0.2s;
+        &:hover {
+            background-color: $active-color;
+        }
+    }
+    &.rounded {
+        border-radius: 4px;
+    }
 }
 
 .progress-bar {
     margin-bottom: 50px;
-    background-color: $progress-bar;
+    background-color: #eae8e8;
     & > div {
         display: inline-block;
     }
@@ -106,7 +133,7 @@ img {
         bottom: 35px;
         right: 5%;
         padding: 3px 8px;
-        background-color: $top-color;
+        background-color: rgba(0, 0, 0, .6);
         border-radius: 10px;
         color: $white-color;
         &::after {
@@ -119,11 +146,48 @@ img {
 	        position: absolute;
             pointer-events: none;
             border-color: rgba(17, 17, 17, 0);
-            border-top-color: $top-color;
+            border-top-color: rgba(0, 0, 0, .6);
             border-width: 4px;
             margin-left: -4px;
         }
     }
+}
+
+.feature-brief {
+    text-align: center;
+    h3 {
+        font-size: 18px;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    i {
+        display: block;
+        margin-bottom: 30px;
+        font-size: 36px;
+    }
+    
+    &.white {
+        color: $white-color;
+        i {
+            color: $active-color;
+        }  
+        p {
+            color: $white-color;
+        }
+    }
+    &.black {
+        color: $black-color; 
+        i {
+            color: $black-color;
+        }
+        p {
+            color: $p-color;
+        }
+    }
+}
+
+.title-block {
+    margin-bottom: 30px;
 }
 
 
@@ -180,6 +244,28 @@ img {
         letter-spacing: 2px;
         text-transform: uppercase;
     }
+
+    .special-services {
+        padding: 100px 0;
+        .title {
+            margin-bottom: 5px;
+            color: $active-color;
+            font-size: 16px;
+        }
+        .subtitle {
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 30px 0;
+        }
+    }
+
+    .special-offer {
+        padding: 60px 0;
+    }
 }
 
 // header
@@ -203,7 +289,7 @@ img {
     .breadcrumb {
         float: right;
         padding: 15px;
-        background-color: $top-color; 
+        background-color: rgba(0, 0, 0, .6); 
         li {
             float: left;
             color: $white-color;
@@ -226,6 +312,9 @@ img {
         a {
             color: $p-color;
             text-decoration: none;
+        }
+        &.transparent {
+            background: transparent;
         }
     }
 }
@@ -279,7 +368,7 @@ img {
         position: absolute;
         top: 35%;
         right: 10%;
-        color: $info-color;
+        color: #222;
         font-size: 24px;
         font-weight: 300;
         text-align: right;
@@ -297,7 +386,7 @@ img {
     line-height: 20px;
     h3 {
         margin: 0;
-        color: $info-color;
+        color: #222;
         font-size: 14px;
         font-weight: normal;
         text-align: center;
@@ -434,18 +523,37 @@ img {
     }
 }
 
+.feature-item {
+    position: relative;
+    margin-bottom: 80px;
+    padding-left: 50px;
+    i {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 32px;
+    }
+    .title {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .desc {
+        color: $p-color;
+    }
+}
+
 // footer
 
 #footer {
     position: relative;
     padding: 80px 0;
-    background-color: $footer-background-color;
+    background-color: #f5f5f5;
     .logo {
         position: absolute;
         top: -30%;
         left: 50%;
         padding: 20px;
-        border: 5px solid $footer-background-color;
+        border: 5px solid #f5f5f5;
         background-color: $white-color;
         transform: translateX(-50%);
     }
@@ -469,11 +577,11 @@ img {
             margin: 0 10px;
             a {
                 display: inline-block;
-                border: 1px solid $info-color;
+                border: 1px solid #222;
                 border-radius: 20px;
                 width: 40px;
                 height: 40px;
-                color: $info-color;
+                color: #222;
                 font-size: 20px;
                 text-decoration: none;
                 text-align: center;
@@ -485,7 +593,7 @@ img {
 
 #footer.dark {
     padding: 0;
-    background-color: $info-color;
+    background-color: #222;
     .info {
         padding: 80px 0;
         p {
@@ -506,7 +614,7 @@ img {
             }
             a {
                 display: block;
-                color: $light-gray-color;
+                color: #a5a5a5;
                 font-size: 15px;
                 line-height: 45px;
                 text-transform: capitalize;
@@ -529,10 +637,10 @@ img {
     }
     .bottom {
         padding: 35px 0; 
-        background-color: $bottom-color;
+        background-color: #1b1b1b;
         .copyright {
             margin-top: 10px;
-            color: $dark-footer-color;
+            color: #6f7273;
             text-transform: capitalize;
             a {
                 color: $white-color;
@@ -541,8 +649,8 @@ img {
         }
         .social-media {
             a {
-                border-color: $dark-footer-color;
-                color: $dark-footer-color;
+                border-color: #6f7273;
+                color: #6f7273;
             }
         }
     }
@@ -557,7 +665,7 @@ img {
     bottom: 35px;
     width: 40px;
     height: 40px;
-    background-color: $top-color;
+    background-color: rgba(0, 0, 0, .6);
     text-align: center;
     line-height: 40px;
     a {

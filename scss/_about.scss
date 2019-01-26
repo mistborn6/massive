@@ -8,29 +8,13 @@
             background-size: cover;
             background-position: 50%;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: $white-color;
-            text-align: center;
-            h3 {
-                font-size: 18px;
-                font-weight: normal;
-                text-transform: uppercase;
-            }
-            i {
-                display: block;
-                margin-bottom: 30px;
-                color: $active-color;
-                font-size: 36px;
-            }
-            p {
-                color: $white-color;
-            }
+            background-attachment: fixed;      
         }
     }
     .cover {
         h4 {
             margin: 30px 0;
-            color: $info-color;
+            color: #222;
             font-size: 14px;
             font-weight: 400;
             letter-spacing: 4px;
@@ -64,13 +48,13 @@
         }
         p {
             padding: 0;
-            color: $light-gray-color;
+            color: #a5a5a5;
             font-size: 12px;
         }
     }
     .gray {
         padding: 100px 0;
-        background-color: $footer-background-color;
+        background-color: #f5f5f5;
         text-align: center;
         i {
             display: block;
@@ -82,7 +66,7 @@
         }
         h4 {
             margin: 0;
-            color: $gray-color;
+            color: #323232;
             font-size: 15px;
             font-weight: normal;
             letter-spacing: 1px;
